@@ -2,7 +2,7 @@
 ---List the employee number, last name, first name, sex, and salary of each employee.
 select e.emp_no,e.last_name,e.first_name, e.sex,s.salary
 from employees e
-join salaries s
+left join salaries s
 on e.emp_no = s.emp_no;
 
 ---List the first name, last name, and hire date for the employees who were hired in 1986.
@@ -60,7 +60,7 @@ or d.dept_name = 'Development';
 select count(last_name),last_name 
 from employees
 group by last_name
-order by last_name desc;
+order by count(last_name) desc;
 
 
 
